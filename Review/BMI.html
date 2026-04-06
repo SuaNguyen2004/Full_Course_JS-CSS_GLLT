@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính chỉ số BMI</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+      }
+      .yeu-cau {
+        color: red;
+        font-weight: bold;
+      }
+      .ketqua {
+        margin-top: 10px;
+        font-weight: bold;
+        color: #007b00;
+      }
+      img {
+        margin-top: 10px;
+        width: 180px;
+        height: auto;
+        border-radius: 10px;
+        transition: opacity 0.6s ease;
+      }
+      input {
+        margin: 5px;
+      }
+      button {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Tính chỉ số BMI</h2>
+
+    <div>
+      Cân nặng (Kg):
+      <input type="number" id="canNang" placeholder="Nhập cân nặng" />
+    </div>
+    <div>
+      Chiều cao (m):
+      <input type="number" id="chieuCao" placeholder="Nhập chiều cao" />
+    </div>
+
+    <div>
+      <button onclick="kiemTraChiSo()">Kiểm tra chỉ số</button>
+    </div>
+
+    <!-- Nơi hiển thị kết quả -->
+    <p id="thongBao" class="yeu-cau"></p>
+    <p id="ketQua" class="ketqua"></p>
+    <div id="hinhAnh"></div>
+
+    <script>
+      function kiemTraChiSo() {
+        let canNang = parseFloat(document.getElementById("canNang").value);
+        let chieuCao = parseFloat(document.getElementById("chieuCao").value);
+
+        // Kiểm tra hợp lệ
+        let hopLe = kiemTraHopLe(canNang, chieuCao);
+
+        if (!hopLe.hopLe) {
+          document.getElementById("thongBao").innerHTML = hopLe.thongBao;
+          document.getElementById("ketQua").innerHTML = "";
+          document.getElementById("hinhAnh").innerHTML = "";
+          return;
+        }
+
+        // Nếu hợp lệ
+        let chiSoBMI = canNang / (chieuCao * chieuCao);
+        document.getElementById("thongBao").innerHTML = "";
+
+        // Lấy kết quả phân loại và hình
+        let ketQua = xepLoaiBMI(chiSoBMI);
+
+        document.getElementById("ketQua").innerHTML =
+          "Chỉ số BMI của bạn là: " +
+          chiSoBMI.toFixed(2) +
+          " — " +
+          ketQua.moTa;
+
+        document.getElementById("hinhAnh").innerHTML = `
+          <img src="${ketQua.hinh}" alt="Hình minh họa BMI">
+        `;
+      }
+
+      // Hàm kiểm tra nhập liệu
+      function kiemTraHopLe(a, b) {
+        let saiCanNang = isNaN(a) || a <= 0;
+        let saiChieuCao = isNaN(b) || b <= 0;
+        let thongBao = "";
+
+        if (saiCanNang && saiChieuCao) {
+          thongBao = "Vui lòng nhập lại cân nặng và chiều cao!";
+        } else if (saiCanNang) {
+          thongBao = "Vui lòng nhập lại cân nặng!";
+        } else if (saiChieuCao) {
+          thongBao = "Vui lòng nhập lại chiều cao!";
+        }
+
+        return { hopLe: !saiCanNang && !saiChieuCao, thongBao: thongBao };
+      }
+
+      // Hàm phân loại BMI + gắn ảnh tương ứng
+      function xepLoaiBMI(bmi) {
+        if (bmi < 18.5)
+          return {
+            moTa: "Thiếu cân",
+            hinh: "thieu.png",
+          };
+        else if (bmi < 24.9)
+          return {
+            moTa: "Bình thường",
+            hinh: "binhthuong.png",
+          };
+        else if (bmi < 29.9)
+          return {
+            moTa: "Thừa cân",
+            hinh: "thua.png",
+          };
+        else if (bmi < 40)
+          return {
+            moTa: "Béo phì cấp độ 1-2",
+            hinh: "beocapdo1.png",
+          };
+        else
+          return {
+            moTa: "Béo phì nặng",
+            hinh: "beonang.png",
+          };
+      }
+    </script>
+  </body>
+</html>

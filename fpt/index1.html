@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xem phim trực tuyến</title>
+    <style>
+      body {
+        margin: 0;
+        background-color: #131314;
+        color: white;
+        font-family: "SFProDisplay", Arial, sans-serif;
+      }
+
+      header {
+        background-color: black;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        background-color: black;
+        width: 70%;
+        margin: auto;
+      }
+
+      .danhmuc {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 10px 0;
+      }
+
+      .logo {
+        width: 15%;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        gap: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        font-weight: bold;
+        color: #9b9b9b;
+        font-size: 16px;
+      }
+
+      a:hover {
+        color: orange;
+      }
+
+      .chucnang {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .muagoi,
+      .dangnhap {
+        border: none;
+        border-radius: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      .muagoi {
+        background-color: orangered;
+        color: white;
+      }
+
+      .muagoi:hover {
+        background-color: orange;
+      }
+
+      .dangnhap {
+        background-color: black;
+        color: white;
+      }
+
+      main {
+        width: 100%;
+      }
+
+      .container {
+        width: 70%;
+        background-color: black;
+        margin: auto;
+        padding-bottom: 20px;
+      }
+
+      /* ===== BANNER ===== */
+      .banner {
+        width: 98%;
+        height: 400px;
+        margin: 20px auto;
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .movie-info-overlay {
+        position: absolute;
+        bottom: 80px;
+        left: 40px;
+        color: white;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+      }
+
+      .movie-info-overlay h2 {
+        margin: 0 0 10px 0;
+        font-size: 38px;
+        color: orange;
+        font-weight: bold;
+      }
+
+      .movie-info-overlay .details {
+        font-size: 15px;
+        color: #e0e0e0;
+        margin-bottom: 15px;
+      }
+
+      .xemngay {
+        position: absolute;
+        left: 40px;
+        bottom: 25px;
+        background-color: orangered;
+        border: none;
+        color: white;
+        padding: 12px 26px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .xemngay:hover {
+        background-color: #ff7b00;
+      }
+
+      /* Trailer */
+      .trailer {
+        width: 98%;
+        height: 400px;
+        margin: 20px auto;
+        display: none;
+      }
+
+      .trailer iframe {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+      }
+
+      /* ===== Danh sách phim ===== */
+      .danhsach {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 20px;
+        flex-wrap: wrap;
+      }
+
+      .phim {
+        width: 19%;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .phim img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .phim h3 {
+        color: white;
+        font-size: 16px;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-container">
+        <nav class="danhmuc">
+          <img class="logo" src="logowebsite4x_1748221195181.png" alt="" />
+          <ul class="danhmuc-danhsach">
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Phim chiếu rạp</a></li>
+            <li><a href="#">Phim bộ</a></li>
+            <li><a href="#">Thiếu nhi</a></li>
+          </ul>
+        </nav>
+        <div class="chucnang">
+          <button class="muagoi">Mua gói</button>
+          <button class="dangnhap">Đăng nhập</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <!-- Banner -->
+        <div class="banner"></div>
+
+        <!-- Trailer -->
+        <div class="trailer">
+          <iframe src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- Danh sách phim -->
+        <h2 style="margin-left: 20px">Phim chiếu rạp</h2>
+        <div class="danhsach" id="listPhim"></div>
+      </div>
+    </main>
+
+    <script>
+      let danhSachPhim = [
+        {
+          id: 1,
+          ten: "Mưa đỏ",
+          poster: "350x495-muado.jpg",
+          banner: "640x396-muado.jpg",
+          trailer: "https://www.youtube.com/embed/BD6PoZJdt_M",
+          namXuatBan: "2025",
+          quocGia: "Việt Nam",
+        },
+        {
+          id: 2,
+          ten: "Doraemon",
+          poster: "doraemon.jpg",
+          banner: "doraemon-ngang.jpg",
+          trailer: "https://www.youtube.com/embed/rSWDKZ2W6PE",
+          namXuatBan: "2025",
+          quocGia: "Nhật Bản",
+        },
+        {
+          id: 3,
+          ten: "Fairy Tail",
+          poster: "FT.jpg",
+          banner: "FT-ngang.jpg",
+          trailer: "https://www.youtube.com/embed/z9LEdWj4FAo",
+          namXuatBan: "2024",
+          quocGia: "Nhật Bản",
+        },
+        {
+          id: 4,
+          ten: "Naruto",
+          poster: "NRT.jpg",
+          banner: "NRT-ngang.jpg",
+          trailer: "https://www.youtube.com/embed/sbc6TfSfKrk",
+          namXuatBan: "2025",
+          quocGia: "Mỹ",
+        },
+        {
+          id: 5,
+          ten: "Kungfu Panda",
+          poster: "KP.jpg",
+          banner: "KP-ngang.jpg",
+          trailer: "https://www.youtube.com/embed/NRc-ze7Wrxw",
+          namXuatBan: "2019",
+          quocGia: "Trung Quốc",
+        },
+        {
+          id: 6,
+          ten: "Conan",
+          poster: "conan.jpg",
+          banner: "conan-du-anh.jpg",
+          trailer: "https://www.youtube.com/embed/dz5mN-iIC4g",
+          namXuatBan: "2025",
+          quocGia: "Nhật Bản",
+        },
+      ];
+
+      let bannerElement = document.getElementsByClassName("banner")[0];
+      let trailerElement = document.getElementsByClassName("trailer")[0];
+      let iframe = trailerElement.querySelector("iframe");
+      let listPhim = document.getElementById("listPhim");
+
+      let phimHienTai = danhSachPhim[0];
+
+      // Hiển thị danh sách phim
+      for (let i = 0; i < danhSachPhim.length; i++) {
+        let p = document.createElement("div");
+        p.className = "phim";
+        p.innerHTML = `
+          <img src="${danhSachPhim[i].poster}" alt="${danhSachPhim[i].ten}">
+          <h3>${danhSachPhim[i].ten}</h3>`;
+        p.onclick = function () {
+          chooseFilm(danhSachPhim[i].id);
+        };
+        listPhim.appendChild(p);
+      }
+
+      function viewTrailer() {
+        bannerElement.style.display = "none";
+        trailerElement.style.display = "block";
+        iframe.src = phimHienTai.trailer;
+      }
+
+      function chooseFilm(filmId) {
+        let selectedFilm = danhSachPhim.find((film) => film.id === filmId);
+        bannerElement.style.backgroundImage = "url('" + selectedFilm.banner + "')";
+        bannerElement.innerHTML = `
+          <div class="movie-info-overlay">
+            <h2>${selectedFilm.ten}</h2>
+            <div class="details">
+              ${selectedFilm.namXuatBan} · ${selectedFilm.quocGia}
+            </div>
+          </div>
+          <button class="xemngay" onclick="viewTrailer()">Xem ngay</button>
+        `;
+        phimHienTai = selectedFilm;
+        bannerElement.style.display = "block";
+        trailerElement.style.display = "none";
+      }
+
+      // Gọi mặc định phim đầu tiên
+      chooseFilm(phimHienTai.id);
+    </script>
+  </body>
+</html>

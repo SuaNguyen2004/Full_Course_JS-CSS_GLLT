@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   document.writeln("Chào mừng bạn đến với hệ thống thông tin học sinh!");
+
+      //   let diemToan = 10,
+      //     diemVan = 8.5,
+      //     diemAnh = 9.5;
+      //   let dtb = (diemToan + diemVan + diemAnh) / 3;
+      //   dtb = dtb.toFixed(2);
+      //   document.writeln(`<br> Điểm trung bình là : ${dtb} <br>`);
+      //   if (dtb >= 8) {
+      //     hocLuc = "Giỏi";
+      //     document.writeln(hocLuc);
+      //   } else if (dtb < 8 && dtb >= 6.5) {
+      //     hocLuc = "Khá";
+      //     document.writeln(hocLuc);
+      //   } else if (dtb < 6.5 && dtb >= 5) {
+      //     hocLuc = "Trung bình";
+      //     document.writeln(hocLuc);
+      //   } else {
+      //     hocLuc = "Yếu";
+      //     document.writeln(hocLuc);
+      //   }
+
+      //   let thongTinHocSinh = {
+      //     hoTen: "SuaNguyen",
+      //     lop: "12A14",
+      //     diemTrungBinh: dtb,
+      //     hocLuc: hocLuc,
+      //   };
+      //   document.writeln(
+      //     "<br> Xin chào " + thongTinHocSinh.hoTen + ", bạn học lớp " + thongTinHocSinh.lop
+      //   );
+      //   document.writeln(
+      //     "Điểm trung bình: " +
+      //       thongTinHocSinh.diemTrungBinh +
+      //       " - Xếp loại: " +
+      //       thongTinHocSinh.hocLuc
+      //   );
+
+      //   document.writeln("Chào mừng đến với hệ thống quản lý nhân viên! <br>");
+      //   let tenNhanVien = "NgoLanHuong",
+      //     tuoi = 18,
+      //     luongCoBan = 20000000;
+      //   heSoLuong = 1.5;
+      //   let tongLuong = luongCoBan * heSoLuong;
+      //   let tuoiNhanVien =
+      //     tuoi >= 30
+      //       ? document.writeln("lớn hơn 30 tuổi <br>")
+      //       : document.writeln("trẻ hơn 30 tuổi <br>");
+      //   let nhanVien = {
+      //     ten: tenNhanVien,
+      //     tuoi: tuoi,
+      //     tongLuong: tongLuong,
+      //     phongBan: "Chủ tịt",
+      //     diaChi: "Park to Liems",
+      //   };
+      //   document.writeln(`Nhân viên: ${nhanVien.ten} (${tuoi} tuổi) <br>`);
+      //   document.writeln(`Phòng ban: ${nhanVien.phongBan} <br>`);
+      //   document.writeln(`Lương tháng: ${nhanVien.tongLuong} VNĐ`);
+
+      //   document.writeln(`Chào mừng đến với cửa hàng HUMG Store! <br>`);
+      //   let tenSanPham = "Tra Tac",
+      //     giaBan = 10000,
+      //     soLuong = 10,
+      //     giamGia = (giaBan * 10) / 100;
+      //   let tongTien = giaBan * soLuong - giamGia;
+      //   let loaiKhachHang = tongTien > 1000000 ? "Khách hàng VIP" : "Khách hàng thường";
+
+      //   let sanPham = {
+      //     ten: tenSanPham,
+      //     gia: giaBan,
+      //     soLuong,
+      //     tongTien,
+      //     loaiKhachHang,
+      //   };
+      //   document.writeln(
+      //     `Sản phẩm: ${sanPham.ten} <br> Giá ${sanPham.gia} VNĐ <br> Số lượng : ${sanPham.soLuong} <br> Tổng tiền: ${sanPham.tongTien} <br> ${sanPham.loaiKhachHang}`
+      //   );
+
+      // let thongTinDatVe = {
+      //   maDatVe: "001",
+      //   thongTinKhachHang: {
+      //     hoTen: "Sua Nguyen",
+      //     soDienThoai: "113",
+      //     laThanhVienVIP: true,
+      //   },
+      //   danhSachPhim: {
+      //     phim1: {
+      //       maPhim: "01",
+      //       tenPhim: "Tây du ký",
+      //       soLuongVe: 20,
+      //       giaVe: 50000,
+      //     },
+      //     phim2: {
+      //       maPhim: "02",
+      //       tenPhim: "Anh em cây khế",
+      //       soLuongVe: 25,
+      //       giaVe: 60000,
+      //     },
+      //     phim3: {
+      //       maPhim: "03",
+      //       tenPhim: "Hồ lô biến",
+      //       soLuongVe: 30,
+      //       giaVe: 70000,
+      //     },
+      //   },
+      //   diaChiRap: "CGV Times City",
+      //   daThanhToan: false,
+      // };
+      // let tongTien1 =
+      //   thongTinDatVe.danhSachPhim.phim1.soLuongVe * thongTinDatVe.danhSachPhim.phim1.giaVe;
+      // let tongTien2 =
+      //   thongTinDatVe.danhSachPhim.phim2.soLuongVe * thongTinDatVe.danhSachPhim.phim2.giaVe;
+      // let tongTien3 =
+      //   thongTinDatVe.danhSachPhim.phim3.soLuongVe * thongTinDatVe.danhSachPhim.phim3.giaVe;
+      // let tongTienPhaiTra = tongTien1 + tongTien2 + tongTien3;
+
+      // if (thongTinDatVe.thongTinKhachHang.laThanhVienVIP == true) {
+      //   tongTienPhaiTra -= (tongTienPhaiTra * 10) / 100;
+      //   document.writeln("Bạn sẽ được giảm 10% tổng tiền");
+      // } else {
+      //   document.writeln("Giữ nguyên giá");
+      // }
+
+      // document.writeln(`Họ tên khách hàng: ${thongTinDatVe.thongTinKhachHang.hoTen} <br>`);
+      // document.writeln(`Số điện thoại: ${thongTinDatVe.thongTinKhachHang.soDienThoai} <br>`);
+      // document.writeln(`Tổng tiền phải trả: ${tongTienPhaiTra} <br>`);
+      // document.writeln(`Địa chỉ rạp: ${thongTinDatVe.diaChiRap} <br>`);
+      // document.writeln(`Trạng thái thanh toán: ${thongTinDatVe.daThanhToan} <br>`);
+
+      // document.writeln(thongTinDatVe.thongTinKhachHang.hoTen.length + "<br>");
+      // document.writeln(thongTinDatVe.thongTinKhachHang.hoTen.toUpperCase() + "<br>");
+      // document.writeln(thongTinDatVe.thongTinKhachHang.hoTen.replace("Sua", "Amee") + "<br>");
+      // document.writeln(thongTinDatVe.thongTinKhachHang.hoTen.split("a") + "<br>");
+      // document.writeln(thongTinDatVe.thongTinKhachHang.hoTen.includes("a") + "<br>");
+
+      // let danhSachTenPhim = [
+      //   thongTinDatVe.danhSachPhim.phim1.tenPhim,
+      //   thongTinDatVe.danhSachPhim.phim2.tenPhim,
+      //   thongTinDatVe.danhSachPhim.phim3.tenPhim,
+      // ];
+      // document.writeln(danhSachTenPhim[(0, 1, 2)].startsWith("A") + "<br>");
+
+      // let ngayDat = new Date(2020, 1, 12, 12, 30, 0);
+      // document.writeln(ngayDat);
+
+      let hoaDonVeMayBay = {
+        maHoaDon: "02312",
+        thongTinKhachHang: {
+          hoTen: "Hoai Anh Tran",
+          soDienThoai: "0987654231",
+        },
+        laThanhVienHangThuong: true,
+        chuyenBay: {
+          chuyen1: {
+            maChuyenBay: "VNA",
+            diemDi: "HaNoi",
+            diemDen: "HaiPhong",
+            giaVe: 700000,
+            soLuongVe: 2,
+          },
+          chuyen2: {
+            maChuyenBay: "VJA",
+            diemDi: "HaNoi",
+            diemDen: "TP.HCM",
+            giaVe: 1500000,
+            soLuongVe: 5,
+          },
+          chuyen3: {
+            maChuyenBay: "BBA",
+            diemDi: "HaNoi",
+            diemDen: "DaNang",
+            giaVe: 950000,
+            soLuongVe: 10,
+          },
+        },
+        diaChiVanPhong: "NoiBai - HaNoi",
+        daThanhToan: false,
+      };
+
+      let tong1 =
+        hoaDonVeMayBay.chuyenBay.chuyen1.giaVe * hoaDonVeMayBay.chuyenBay.chuyen1.soLuongVe;
+      let tong2 =
+        hoaDonVeMayBay.chuyenBay.chuyen2.giaVe * hoaDonVeMayBay.chuyenBay.chuyen2.soLuongVe;
+      let tong3 =
+        hoaDonVeMayBay.chuyenBay.chuyen3.giaVe * hoaDonVeMayBay.chuyenBay.chuyen3.soLuongVe;
+
+      tongTien = tong1 + tong2 + tong3;
+
+      if (hoaDonVeMayBay.laThanhVienHangThuong) {
+        tongTien -= (tongTien * 15) / 100;
+      }
+
+      document.writeln(`Họ tên khách hàng: ${hoaDonVeMayBay.thongTinKhachHang.hoTen}<br>`);
+      document.writeln(`Số điện thoại: ${hoaDonVeMayBay.thongTinKhachHang.soDienThoai}<br>`);
+      document.writeln(`Tổng tiền quý khách phải trả: ${tongTien}<br>`);
+      if (hoaDonVeMayBay.daThanhToan == true) {
+        document.writeln(`Thanh toán : thành công<br>`);
+      } else {
+        document.writeln(`Thanh toán : thất bại<br>`);
+      }
+      document.writeln(`Địa chỉ văn phòng: ${hoaDonVeMayBay.diaChiVanPhong}<br>`);
+
+      document.writeln(`Độ dài hoá đơn: ${hoaDonVeMayBay.maHoaDon.length}<br>`);
+      document.writeln(
+        `Họ tên khách hàng: ${hoaDonVeMayBay.thongTinKhachHang.hoTen.toUpperCase()}<br>`
+      );
+      document.writeln(`${hoaDonVeMayBay.thongTinKhachHang.hoTen.includes("Nguyen")}<br>`);
+      document.writeln(
+        `Địa chỉ văn phòng: ${hoaDonVeMayBay.diaChiVanPhong.replace("HaNoi", "TP.HCM")}<br>`
+      );
+
+      let diemDenList = [
+        hoaDonVeMayBay.chuyenBay.chuyen1.diemDen,
+        hoaDonVeMayBay.chuyenBay.chuyen2.diemDen,
+        hoaDonVeMayBay.chuyenBay.chuyen3.diemDen,
+      ];
+      document.writeln(diemDenList[0].startsWith("T") + "<br>");
+
+      let ngayDatVe = new Date();
+      let ngayBay = new Date(ngayDatVe);
+      ngayBay.setDate(ngayDatVe.getDate() + 5);
+      ngayDatVe.setHours(9, 30, 0);
+      document.writeln(`Ngày đặt vé : ${ngayDatVe}<br>`);
+      document.writeln(`Ngày bay : ${ngayBay}`);
+    </script>
+  </body>
+</html>

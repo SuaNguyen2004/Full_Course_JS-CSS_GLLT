@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // diemThi = [7, 8.5, 9, 6, 5, 8, 10, 7.5];
+      // document.writeln(diemThi.length + "<br>");
+      // document.writeln(diemThi.shift() + "<br>");
+      // document.writeln(diemThi.pop() + "<br>");
+      // document.writeln(diemThi.indexOf(8) + "<br>");
+      // document.writeln(diemThi.lastIndexOf(8) + "<br>");
+
+      // let monChinh = ["Toán", "Văn", "Anh"];
+      // let monPhu = ["Tin học", "Sinh học"];
+
+      // let tatCaMon = monChinh.concat(monPhu);
+      // //   document.writeln(tatCaMon + "<br>");
+      // tatCaMon1 = tatCaMon.push("Lịch sử");
+      // //   document.writeln(tatCaMon + "<br>");
+      // tatCaMon2 = tatCaMon.shift();
+      // //   document.writeln(tatCaMon + "<br>");
+
+      // tatCaMon3 = tatCaMon.join();
+      // document.writeln(tatCaMon + "<br>");
+
+      // let toDay = new Date();
+      // if (toDay.getHours() < 10) {
+      //   document.writeln("Chào buổi sáng, sinh viên chăm chỉ!");
+      // } else if (toDay.getHours() >= 10 && toDay.getHours() < 12) {
+      //   document.writeln("Chào buổi trưa!");
+      // } else if (toDay.getHours() >= 12 && toDay.getHours() < 17) {
+      //   document.writeln("Chào buổi chiều!");
+      // } else {
+      //   document.writeln("Chào buổi tối");
+      // }
+
+      let gioHang = ["Laptop", "Chuột", "Bàn phím", "Tai nghe", "Loa"];
+      document.writeln(gioHang.length + "<br>");
+      document.writeln(gioHang.indexOf("Chuột") + "<br>");
+      document.writeln(gioHang.reverse() + "<br>");
+
+      let giaTien = [15000000, 200000, 500000, 300000, 1000000];
+      // document.writeln(gioHang.indexOf("Bàn phím") + "<br>");
+      document.writeln(giaTien[gioHang.indexOf("Bàn phím")] + "<br>");
+      gioHang1 = gioHang.push("Webcam");
+      document.writeln(gioHang + "<br>");
+      giaTien1 = giaTien.push(400000);
+      document.writeln(giaTien + "<br>");
+      gioHang2 = gioHang.pop();
+      document.writeln(gioHang + "<br>");
+
+      let tongTien = 0;
+      for (i = 0; i < giaTien.length; i++) {
+        tongTien += giaTien[i];
+      }
+
+      if (tongTien > 5000000) {
+        document.writeln("Bạn được giảm giá 10% <br>");
+        let tienSauGiam = tongTien * 0.9;
+        document.writeln("Tổng tiền sau giảm " + tienSauGiam + "VNĐ <br>");
+      } else {
+        document.writeln("Cảm ơn bạn đã mua hàng!<br>");
+        document.writeln("Tổng tiền: " + tongTien + " VNĐ<br>");
+      }
+
+      let gioHienTai = new Date().getHours();
+      if (gioHienTai < 10) {
+        document.writeln("Chào buổi sáng<br>");
+      } else if (gioHienTai >= 10 && gioHienTai < 13) {
+        document.writeln("Chào buổi trưa<br>");
+      } else if (gioHienTai >= 13 && gioHienTai <= 18) {
+        document.writeln("Chào buổi chiều<br>");
+      } else {
+        document.writeln("Chào buổi tối<br>");
+      }
+
+      let maDonHang = "123456789ABC";
+      document.writeln(maDonHang.length + "<br>");
+      let kyTuCuoi = maDonHang[maDonHang.length - 1];
+      if (isNaN(kyTuCuoi)) {
+        document.writeln("Mã hợp lệ");
+        document.writeln("vì ký tự cuối là : " + kyTuCuoi);
+      } else {
+        document.writeln("Mã chưa hợp lệ");
+        document.writeln("vì ký tự cuối là : " + kyTuCuoi);
+      }
+    </script>
+  </body>
+</html>

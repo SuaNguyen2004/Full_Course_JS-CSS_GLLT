@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đổi ảnh thành video</title>
+    <style>
+      video,
+      iframe,
+      img {
+        width: 500px;
+        border-radius: 10px;
+        height: 100%;
+      }
+
+      .menu {
+        display: flex;
+        justify-content: space-between;
+        width: 500px;
+      }
+
+      h1 {
+        cursor: pointer;
+      }
+
+      h1:hover {
+        color: orangered;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="media-container">
+      <img src="conan-du-anh.jpg" alt="" id="poster" />
+    </div>
+
+    <h1 id="tenPhim">Tên phim: Conan</h1>
+
+    <div class="menu">
+      <h1 onclick="chonPhim(1)">Conan</h1>
+      <h1 onclick="chonPhim(2)">Fairy tail</h1>
+      <h1 onclick="chonPhim(3)">Doraemon</h1>
+    </div>
+
+    <script>
+      let danhSachPhim = [
+        {
+          id: 1,
+          ten: "Conan",
+          anh: "conan-du-anh.jpg",
+          youtube: "https://www.youtube.com/embed/dz5mN-iIC4g",
+          namXuatBan: "2025",
+          thoiLuongPhim: "1 giờ 32 phút",
+          quocGia: "Nhật Bản",
+          danhGia: "5.0 (200k)",
+        },
+        {
+          id: 2,
+          ten: "Fairy tail",
+          anh: "FT-ngang.jpg",
+          youtube: "https://www.youtube.com/embed/z9LEdWj4FAo",
+          namXuatBan: "2025",
+          thoiLuongPhim: "1 giờ 15 phút",
+          quocGia: "Nhật Bản",
+          danhGia: "5.0 (1000k)",
+        },
+        {
+          id: 3,
+          ten: "Doraemon",
+          anh: "doraemon-ngang.jpg",
+          youtube: "https://www.youtube.com/embed/rSWDKZ2W6PE",
+          namXuatBan: "2004",
+          thoiLuongPhim: "2 giờ 15 phút",
+          quocGia: "Nhật Bản",
+          danhGia: "5.0 (150k)",
+        },
+      ];
+
+      let phimHienTai = danhSachPhim[0];
+
+      function chonPhim(id) {
+        alert("Id phim được chọn là: " + id);
+        for (let i = 0; i < danhSachPhim.length; i++) {
+          if (danhSachPhim[i].id === id) {
+            phimHienTai = danhSachPhim[i];
+            break; //dừng lại khi tìm thấy
+          }
+        }
+
+        document.getElementById("tenPhim").innerHTML = "Tên phim: " + phimHienTai.ten;
+
+        // tạo iframe nhúng video YouTube
+        document.getElementById("media-container").innerHTML = `
+          <iframe
+          width="500" 
+          height="280"  
+          src="${phimHienTai.youtube}" >
+          </iframe>
+        `;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                font-family: sans-serif;
+            }
+
+            body {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            h1 {
+                font-size: 100px;
+                font-weight: 100;
+                -webkit-text-stroke: 3px rgba(0, 0, 0);
+                color: transparent;
+                position: relative;
+                cursor: pointer;
+            }
+
+            /* h1::before{
+                content: "SuaNguyenCode";
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                color: black;
+                border-right: 0px solid black;
+                overflow: hidden;
+                transition: width 2.0s;
+            }
+
+            h1:hover::before{
+                width: 100%;
+                border-right: 2px solid;
+            } */
+
+            h1::before {
+                content: "SuaNguyenCode";
+                position: absolute;
+                height: 0%;
+                width: 100%;
+                color: black;
+                border-bottom: 0px solid black;
+                overflow: hidden;
+                transition: height 1.5s;
+            }
+
+            h1:hover::before {
+                height: 100%;
+                border-bottom: 2px solid;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>SuaNguyenCode</h1>
+    </body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-container">
+        <!-- Danh mục trang web -->
+        <nav class="danhmuc">
+          <img class="logo" src="logowebsite4x_1748221195181.png" alt="" />
+          <ul class="danhmuc-danhsach">
+            <li class="danhmuc-lienket"><a href="#">Trang chủ</a></li>
+            <li class="danhmuc-lienket"><a href="#">Truyền hình</a></li>
+            <li class="danhmuc-lienket"><a href="#">Phim bộ</a></li>
+            <li class="danhmuc-lienket"><a href="#">V.League</a></li>
+            <li class="danhmuc-lienket"><a href="#">Thiếu nhi</a></li>
+            <li class="danhmuc-lienket"><a href="#">Xem thêm</a></li>
+          </ul>
+        </nav>
+        <!-- Chức năng -->
+        <div class="chucnang">
+          <div>
+            <button class="muagoi">Mua Gói</button>
+          </div>
+          <div>
+            <button class="dangnhap">Đăng nhập</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="quangcao">
+        <img
+          style="width: 69.5%; margin-bottom: 20px"
+          src="09_68bfea5810013f0001205210.jpg"
+          alt=""
+        />
+      </div>
+      <div class="container">
+        <div>
+          <div style="display: flex; justify-content: center">
+            <div class="banner" id="banner"></div>
+            <button class="xemngay" onclick="xemTrailer()">Xem ngay</button>
+          </div>
+          <div style="display: flex; justify-content: center">
+            <img class="qc" src="qc.jpg" alt="" />
+          </div>
+        </div>
+        <div class="theloai">
+          <div class="tentheloai"><h2>Phim chiếu rạp</h2></div>
+          <div class="danhsach">
+            <div class="phim">
+              <div class="anh">
+                <img
+                  src="350x495-muado.jpg"
+                  alt="Mưa đỏ"
+                  data-image="640x396-muado.jpg"
+                  data-trailer="https://www.youtube.com/embed/BD6PoZJdt_M"
+                  data-title="Mưa đỏ"
+                  data-year="2025"
+                  data-duration="2 giờ 10 phút"
+                  data-country="Việt Nam"
+                  data-rating="⭐ 5.0 (2)"
+                  onclick="selectMovie(this)"
+                />
+              </div>
+              <div class="ten"><h3>Mưa đỏ</h3></div>
+            </div>
+            <div class="phim">
+              <div class="anh">
+                <img
+                  src="doraemon.jpg"
+                  alt="Doraemon"
+                  data-image="doraemon-ngang.jpg"
+                  data-trailer="https://www.youtube.com/embed/rSWDKZ2W6PE"
+                  data-title="Doraemon"
+                  data-year="2025"
+                  data-duration="2 giờ 10 phút"
+                  data-country="Nhật Bản"
+                  data-rating="⭐ 4.9 (10)"
+                  onclick="selectMovie(this)"
+                />
+              </div>
+              <div class="ten"><h3>Doraemon</h3></div>
+            </div>
+            <div class="phim">
+              <div class="anh">
+                <img
+                  src="FT.jpg"
+                  alt="Fairy Tail"
+                  data-image="FT-ngang.jpg"
+                  data-trailer="https://www.youtube.com/embed/z9LEdWj4FAo"
+                  data-title="Fairy Tail"
+                  data-year="2024"
+                  data-duration="1 giờ 59 phút"
+                  data-country="Nhật Bản"
+                  data-rating="⭐ 10.0 (100)"
+                  onclick="selectMovie(this)"
+                />
+              </div>
+              <div class="ten"><h3>Fairy Tail</h3></div>
+            </div>
+            <div class="phim">
+              <div class="anh">
+                <img
+                  src="NRT.jpg"
+                  alt="Naruto"
+                  data-image="NRT-ngang.jpg"
+                  data-trailer="https://www.youtube.com/embed/sbc6TfSfKrk"
+                  data-title="Naruto"
+                  data-year="2025"
+                  data-duration="2 giờ 35 phút"
+                  data-country="Mỹ"
+                  data-rating="⭐ 4.0 (12)"
+                  onclick="selectMovie(this)"
+                />
+              </div>
+              <div class="ten"><h3>Naruto</h3></div>
+            </div>
+            <div class="phim">
+              <div class="anh">
+                <img
+                  src="KP.jpg"
+                  alt="Kungfu Panda"
+                  data-image="KP-ngang.jpg"
+                  data-trailer="https://www.youtube.com/embed/NRc-ze7Wrxw"
+                  data-title="Kungfu Panda"
+                  data-year="2019"
+                  data-duration="1 giờ 15 phút"
+                  data-country="Trung Quốc"
+                  data-rating="⭐ 5.0 (20)"
+                  onclick="selectMovie(this)"
+                />
+              </div>
+              <div class="ten"><h3>Kungfu Panda</h3></div>
+            </div>
+          </div>
+        </div>
+        <div class="theloai">
+          <div class="tentheloai"><h2>Phim điện ảnh hay nhất</h2></div>
+          <div class="danhsach">
+            <div class="phim">
+              <div class="anh">
+                <img
+                  src="conan.jpg"
+                  alt="Conan"
+                  data-image="conan-du-anh.jpg"
+                  data-trailer="https://www.youtube.com/embed/dz5mN-iIC4g"
+                  data-title="Conan"
+                  data-year="2025"
+                  data-duration="1 giờ 32 phút"
+                  data-country="Nhật Bản"
+                  data-rating="⭐ 5.0 (200k)"
+                  onclick="selectMovie(this)"
+                />
+              </div>
+              <div class="ten"><h3>Conan</h3></div>
+            </div>
+            <div class="phim">
+              <div class="anh">
+                <img src="350x495-muado.jpg" alt="" />
+              </div>
+              <div class="ten"><h>Mưa đỏ</h></div>
+            </div>
+            <div class="phim">
+              <div class="anh">
+                <img src="350x495-muado.jpg" alt="" />
+              </div>
+              <div class="ten"><h>Mưa đỏ</h></div>
+            </div>
+            <div class="phim">
+              <div class="anh">
+                <img src="350x495-muado.jpg" alt="" />
+              </div>
+              <div class="ten"><h>Mưa đỏ</h></div>
+            </div>
+            <div class="phim">
+              <div class="anh">
+                <img src="350x495-muado.jpg" alt="" />
+              </div>
+              <div class="ten"><h>Mưa đỏ</h></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
